@@ -1,5 +1,5 @@
 # Digit Recognition
-Lemme get yo digits
+Classify
 
 ### MNIST Dataset
 ```
@@ -17,4 +17,10 @@ No training time required
 Easy to implement
 ```
 
-# CNN
+### CNN
+Convolutional Neural Net: 
+```
+First layer is a convoluational layer: 
+- Like a filter(also known as neuron or kernel) that "shines" over the receptive field
+- Just an array of weights that slides (or convolvs)
+
