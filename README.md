@@ -1,5 +1,5 @@
 # Digit Recognition
-Classify
+Classify handwritten digits
 
 ### MNIST Dataset
 ```
