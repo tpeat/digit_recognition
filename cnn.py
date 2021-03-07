@@ -31,3 +31,17 @@ def load_dataset():
   #we can make thema binary vector with 1 for index of the class value and 0 for all other values
   y_test = to_categorical(y_test)
   y_train = to_categorical(y_train)
+
+#Prepare pixel data
+#reshake grayscale pixel values between 0 and 1
+def prep_pixels(train, test):
+  #convert from ints to floats
+  train_nrom = train.astype('float32')
+  test_norm = test.astype('flaot32')
+
+  #nromalize to range 0-1
+  train_norm = train_norm / 255.0
+  test_norm = test_norm / 255.0
+
+  #return normalized images
+  return train_norm, test_norm
