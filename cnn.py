@@ -13,7 +13,7 @@ for i in range(9):
   plt.xticks([i])
   plt.yticks([i])
 fig
-plt.show()
+#plt.show()
 
 #record model performance on validation dataset during training
 #history = model.fit(..., validation_data=(valX, valY))
@@ -45,3 +45,23 @@ def prep_pixels(train, test):
 
   #return normalized images
   return train_norm, test_norm
+
+
+#define model
+#two aspects: feature extraction front end using conv and pooling layers
+#and a classifying backend to predict
+from keras.models import Sequential
+def define_model():
+  from keras.models import Sequential
+  from keras.layers import Conv2D
+  model = Sequential()
+  model.add(Conv2d(32,(3,3), activation='relu',kernel_initializer='he_uniform', input_shape=(28,28,1)))
+  model.add(MaxPooling2D((2,2)))
+  model.add(Flatten())
+  model.add(Dense(100, activation='relu', kernel_initializer='he_uniform'))
+  mdel.add(Dense(10, activation='softmax'))
+
+  #compile model
+  opt = SGD(lr=0.01, momentum=0.9)
+  model.compile(optimizer=opt, loss='categorical_crossentropy',metrics=['accuracy'])
+  return model
